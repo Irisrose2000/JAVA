@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+class Employee {
+    String name;
+    int age;
+    String phoneNumber;
+    String address;
+    double salary;
+
+    // Method to print the salary of the employee
+    public void printSalary() {
+        System.out.println("Salary: " + salary);
+    }
+
+    // Method to print Employee details
+    public void printEmployeeDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("Address: " + address);
+        printSalary();
+    }
+}
+
+// Officer class inheriting from Employee
+class Officer extends Employee {
+    String specialization;
+
+    // Method to print Officer details
+    public void printOfficerDetails() {
+        printEmployeeDetails();
+        System.out.println("Specialization: " + specialization);
+    }
+}
+
+// Manager class inheriting from Employee
+class Manager extends Employee {
+    String department;
+
+    // Method to print Manager details
+    public void printManagerDetails() {
+        printEmployeeDetails();
+        System.out.println("Department: " + department);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Taking input for Officer
+        Officer officer = new Officer();
+        System.out.println("Enter details for Officer:");
+        System.out.print("Name: ");
+        officer.name = scan.nextLine();
+        System.out.print("Age: ");
+        officer.age = scan.nextInt();
+        scan.nextLine(); // Consume newline left by nextInt
+        System.out.print("Phone Number: ");
+        officer.phoneNumber = scan.nextLine();
+        System.out.print("Address: ");
+        officer.address = scan.nextLine();
+        System.out.print("Salary: ");
+        officer.salary = scan.nextDouble();
+        scan.nextLine(); // Consume newline left by nextDouble
+        System.out.print("Specialization: ");
+        officer.specialization = scan.nextLine();
+
+        System.out.println("\nOfficer Details:");
+        officer.printOfficerDetails();
+
+        System.out.println();
+
+        // Taking input for Manager
+        Manager manager = new Manager();
+        System.out.println("Enter details for Manager:");
+        System.out.print("Name: ");
+        manager.name = scan.nextLine();
+        System.out.print("Age: ");
+        manager.age = scan.nextInt();
+        scan.nextLine(); // Consume newline left by nextInt
+        System.out.print("Phone Number: ");
+        manager.phoneNumber = scan.nextLine();
+        System.out.print("Address: ");
+        manager.address = scan.nextLine();
+        System.out.print("Salary: ");
+        manager.salary = scan.nextDouble();
+        scan.nextLine(); // Consume newline left by nextDouble
+        System.out.print("Department: ");
+        manager.department = scan.nextLine();
+
+        System.out.println("\nManager Details:");
+        manager.printManagerDetails();
+
+        scan.close();
+    }
+}
