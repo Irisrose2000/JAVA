@@ -1,0 +1,38 @@
+import java.util.Scanner;
+abstract class Shape
+{
+    abstract void Numberofsides();
+}
+class Rectangle extends Shape
+{
+   void  Numberofsides()
+   
+   {
+    System.out.println("The number of sides in the rectangle is 4");
+   }
+}
+class Triangle extends Shape
+{
+   void  Numberofsides()
+   {
+       System.out.println("The number of sides in the triangle is 3");
+   }
+}
+class Hexagon extends Shape
+{
+  void  Numberofsides(){
+      System.out.println("The number of sides in the hexagon is 6");
+  }
+}
+public class Area
+{
+    public static void main(String []args)
+    {
+        Shape rectangle=new Rectangle();
+        Shape triangle =new Triangle();
+        Shape hexagon =new Hexagon();
+        rectangle.Numberofsides();
+        triangle.Numberofsides();
+       hexagon.Numberofsides();
+    }
+}    
