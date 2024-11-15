@@ -1,0 +1,58 @@
+import java.util.Scanner;
+public class Main
+{
+    private double real;
+    private double imagenry;
+    public Main(double real,double imagenry)
+    {
+        this.real=real;
+        this.imagenry=imagenry;
+    }
+    public Main add(Main next)
+    {
+        double newReal=this.real+next.real;
+        double newImagenry=this.imagenry+next.imagenry;
+        return new Main(newReal,newImagenry);
+    }
+     public Main sub(Main next)
+    {
+        double newReal=this.real-next.real;
+        double newImagenry=this.imagenry-next.imagenry;
+        return new Main(newReal,newImagenry);
+    }
+    public Main multiple(Main next)
+    {
+        double newReal=this.real*next.real;
+        double newImagenry=this.imagenry*next.imagenry;
+        return new Main(newReal,newImagenry);
+    }
+    public void display()
+    {
+        System.out.println(this.real+"+"+this.imagenry+"i");
+    }
+    public static void main(String[]args)
+    {
+        Scanner scan =new Scanner(System.in);
+        System.out.println("enter the real part\n");
+        double real1=scan.nextDouble();
+        System.out.println("enter the imagenry part\n");
+        double imagenry1=scan.nextDouble();
+        System.out.println("enter the real part\n");
+        double real2=scan.nextDouble();
+        System.out.println("enter the imagenry part\n");
+        double imagenry2=scan.nextDouble();
+        Main z1=new Main(real1,imagenry1);
+        Main z2=new Main(real2,imagenry2);
+        Main sum=z1.add(z2);
+        Main difference=z1.sub(z2);
+        Main product=z1.multiple(z2);
+        System.out.println("sum:");
+        sum.display();
+        System.out.println("difference:");
+        difference.display();
+        System.out.println("product:");
+        product.display();
+        
+    }
+    
+}
