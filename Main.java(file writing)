@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.io.IOException;
+import java.io.FileWriter;
+public class Main
+{
+    public static void main(String[]args)
+    {
+        Scanner scan =new Scanner(System.in);
+        System.out.println("Enter the sentence\n");
+        String str=scan.nextLine();
+        int wordcount =countwords(str);
+        try
+        {
+            FileWriter writer =new FileWriter("write.txt");
+            writer.write("The number of word in the sentence is:"+wordcount);
+            writer.close();
+            System.out.println("the file has been rewrited\n");
+        }
+        catch(IOException e)
+        {
+            System.out.println("An error occured");
+            e.printStackTrace();
+        }
+    }
+    public static int countwords(String  a)
+    {
+        if(a==null||a.isEmpty())
+        {
+            return 0;
+        }
+        else
+        {
+         String[] words = a.trim().split("\\s+");
+         return words.length;
+        }
+    }
+}
