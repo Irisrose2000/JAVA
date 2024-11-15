@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class Main
+{
+    public static void main(String[]args)
+    {
+        Scanner scan =new Scanner(System.in);
+        System.out.println("Enter the sentence\n");
+        String sentence=scan.nextLine();
+        StringTokenizer tokenizer=new StringTokenizer(sentence);
+        String longestword=" ";
+        while(tokenizer.hasMoreTokens())
+        {
+            
+            String word = tokenizer.nextToken();
+            if(word.length()>longestword.length())
+            {
+                longestword=word;
+            }
+        }
+        System.out.println("The longest word is:"+longestword);
+    }
+}
